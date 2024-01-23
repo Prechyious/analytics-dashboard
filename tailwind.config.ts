@@ -14,6 +14,7 @@ const config: Config = {
                     success: "#00AC56",
                     warning: "#F5BF3D",
                 },
+                sidebar: "#F7F8FA",
                 background: "#FDFDFD",
                 grayscale: {
                     50: "#FAFAFA",
