@@ -5,6 +5,7 @@ import { GoChevronDown } from "react-icons/go";
 import Card from "./Card";
 import Table from "./Table";
 import TopPlatforms from "./TopPlatforms";
+import BarChart from "./BarChart";
 
 const Dashboard = () => {
     return (
@@ -35,7 +36,7 @@ const Dashboard = () => {
                             </div>
                         </header>
 
-                        <BarChartContainer />
+                        <BarChart />
                     </div>
                     <div className="flex-1 min-h-[23.375rem] grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <Card
@@ -85,7 +86,7 @@ const Dashboard = () => {
 
                         <Table />
                     </section>
-                    <section className="bg-white w-full lg:flex-1 h-auto border border-[#EDF2F7] rounded-[0.987rem] px-5 overflow-y-scroll">
+                    <section className="bg-white w-full lg:flex-1 h-auto border border-[#EDF2F7] rounded-[0.987rem] px-5 overflow-y-scroll no-scrollbar">
                         <header className="flex w-full items-center justify-between mb-5 sticky top-0 py-4 h-[2.625rem] backdrop-blur-sm">
                             <Heading
                                 type="h3"

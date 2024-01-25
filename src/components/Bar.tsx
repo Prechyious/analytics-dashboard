@@ -3,7 +3,7 @@ import Text from "./atoms/typography/Text";
 
 type TBarProps = {
     className?: string;
-    height: string;
+    height?: string;
     isActive?: boolean;
     month: string;
     amount?: string;
@@ -25,8 +25,10 @@ const Bar = ({
         >
             <section
                 className={`absolute -top-10 z-10 -left-[84%] ${
-                    isActive ? "block" : "hidden group-hover:block"
-                }`}
+                    isActive
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
+                } transition-opacity duration-300`}
             >
                 <div className=" w-20 h-7 bg-[#090C2C] rounded-lg flex items-center justify-center shadow-lg">
                     <Text type="small" variant="medium" className="text-white">
@@ -37,17 +39,17 @@ const Bar = ({
             </section>
 
             <div
-                className={`${className} w-[1.875rem] ${height} ${
+                className={`${className} ${height} w-[1.25rem] lg:w-[1.875rem] ${
                     isActive
                         ? "bg-gradient-to-b from-[#34CAA5] to-white duration-500"
                         : "bg-[#34CAA51A] duration-500"
-                } rounded-tl-[1.25rem] rounded-tr-[1.25rem] group-hover:bg-gradient-to-b from-[#34CAA5] to-white duration-500`}
+                } rounded-tl-[1.25rem] rounded-tr-[1.25rem] group-hover:bg-gradient-to-b from-[#34CAA5] to-white`}
             />
 
             <Heading
                 type="h4"
                 variant="medium"
-                className="text-neutral-600/50 "
+                className="text-neutral-600/50 text-center w-full"
             >
                 {month}
             </Heading>
