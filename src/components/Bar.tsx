@@ -4,10 +4,10 @@ import Text from "./atoms/typography/Text";
 type TBarProps = {
     className?: string;
     height: string;
-    // background?: string
     isActive?: boolean;
     month: string;
     amount?: string;
+    onBarClick?: () => void;
 };
 
 const Bar = ({
@@ -16,11 +16,15 @@ const Bar = ({
     isActive = false,
     month,
     amount,
+    onBarClick,
 }: TBarProps) => {
     return (
-        <button className="flex flex-col gap-3 relative group duration-500">
+        <button
+            className="flex flex-col gap-3 relative group duration-500"
+            onClick={onBarClick}
+        >
             <section
-                className={`absolute -top-10 -left-[84%] ${
+                className={`absolute -top-10 z-10 -left-[84%] ${
                     isActive ? "block" : "hidden group-hover:block"
                 }`}
             >

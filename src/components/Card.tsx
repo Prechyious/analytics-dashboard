@@ -1,5 +1,3 @@
-import upTrend from "@/assets/icons/uptrend.svg";
-import downTrend from "@/assets/icons/downtrend.svg";
 import Heading from "./atoms/typography/Heading";
 import Text from "./atoms/typography/Text";
 import { IoIosTrendingDown, IoIosTrendingUp } from "react-icons/io";
@@ -50,22 +48,16 @@ const Card = ({
                 >
                     {heading}
                 </Heading>
-                <Text
-                    type="2xl"
-                    variant="semibold"
-                    className="font-semibold text-[#3A3F51]"
-                >
+                <strong className="font-semibold text-[1.5rem] leading-[2rem] text-[#3A3F51]">
                     {heading.toLowerCase() === "total income"
                         ? `$${quantity}`
                         : quantity}
-                </Text>
+                </strong>
             </div>
 
             <div className="flex w-full justify-between items-center">
-                <Text
-                    type="small"
-                    variant="medium"
-                    className={`px-1.5 rounded-[62.5rem] py-1 flex items-center justify-center gap-0.5 ${
+                <small
+                    className={`px-2 rounded-[62.5rem] py-1 flex items-center font-medium justify-center text-[0.75rem] gap-0.5 ${
                         uptrend
                             ? "text-alerts-success bg-[#34CAA51F]"
                             : "text-alerts-error bg-[#ED544E1F]"
@@ -75,11 +67,11 @@ const Card = ({
                         {uptrend ? <IoIosTrendingUp /> : <IoIosTrendingDown />}
                     </span>
                     {`${percent}%`}
-                </Text>
+                </small>
 
-                <Text type="small" variant="normal" className="text-[#606060]">
+                <small className="text-[#606060] text-[0.75rem] leading-normal">
                     vs. previous month
-                </Text>
+                </small>
             </div>
         </article>
     );

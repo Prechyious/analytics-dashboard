@@ -15,14 +15,6 @@ export const HEADING_STYLE = {
     extraSmall: "text-[0.625rem] leading-[0.875rem]",
 };
 
-export const HEADING_LINE_HEIGHT = {
-    h1: "leading-[4.5rem]",
-    h2: "leading-[3.5rem]",
-    h3: "leading-[2.5rem]",
-    h4: "leading-[2rem]",
-    h5: "leading-[1.75rem]",
-};
-
 export const TEXT_STYLE = {
     "2xl": "text-[1.5rem] leading-[2rem]",
     extraLarge: "text-[1.125rem] leading-[1.625rem]",

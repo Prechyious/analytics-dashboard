@@ -2,11 +2,14 @@
 import { useState } from "react";
 import Bar from "./Bar";
 import Text from "./atoms/typography/Text";
-
-const range = ["50,000", "40,000", "30,000", "20,000", "10,000", "5,000", "0"];
+import { data, range } from "@/utils/data";
 
 const BarChart = () => {
-    const [isActiveIndex, setIsActiveIndex] = useState(0);
+    const [activeMonth, setActiveMonth] = useState("Jun");
+
+    const handleBarClick = (clickedMonth: string) => {
+        setActiveMonth(clickedMonth);
+    };
     return (
         <div className="flex w-full h-[15.9375rem] gap-6 items-start">
             <aside className="min-w-[2.5rem] h-full flex flex-col items-start justify-between">
@@ -35,23 +38,16 @@ const BarChart = () => {
 
                 {/* Bars */}
                 <div className="flex w-full h-[18.1250rem] items-end justify-between">
-                    <Bar height="h-[4.25rem]" month="Jan" />
-                    <Bar height="h-[7.5rem]" month="Feb" />
-                    <Bar height="h-[2.5rem]" month="Mar" />
-                    <Bar height="h-[10.0625rem]" month="Apr" />
-                    <Bar height="h-[5.0625rem]" month="May" />
-                    <Bar
-                        height="h-[13.5rem]"
-                        month="Jun"
-                        isActive={true}
-                        amount="45.000"
-                    />
-                    <Bar height="h-[5.0625rem]" month="Jul" />
-                    <Bar height="h-[8.1875rem]" month="Aug" />
-                    <Bar height="h-[11.375rem]" month="Sep" />
-                    <Bar height="h-[3.1875rem]" month="Oct" />
-                    <Bar height="h-[10.6875rem]" month="Nov" />
-                    <Bar height="h-[9.4375rem]" month="Dec" />
+                    {data.map((bar) => (
+                        <Bar
+                            key={bar.id}
+                            height={bar.height}
+                            month={bar.month}
+                            amount={bar.price}
+                            isActive={activeMonth === bar.month}
+                            onBarClick={() => handleBarClick(bar.month)}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

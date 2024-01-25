@@ -1,8 +1,4 @@
-import {
-    HEADING_LINE_HEIGHT,
-    HEADING_STYLE,
-    HEADING_VARIANTS,
-} from "@/utils/constants";
+import { HEADING_STYLE, HEADING_VARIANTS } from "@/utils/constants";
 
 const Heading = ({
     children,
