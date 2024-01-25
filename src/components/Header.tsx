@@ -5,17 +5,21 @@ import calendar from "@/assets/icons/calendar.svg";
 import bell from "@/assets/icons/bell.svg";
 import justin from "@/assets/images/justin.png";
 import Text from "./atoms/typography/Text";
-import { FaChevronDown } from "react-icons/fa";
+import { GoChevronDown } from "react-icons/go";
 export const Header = () => {
     return (
         <header className="h-[5.5rem] bg-grayscale-50 flex items-center border-b w-full">
-            <nav className="px-5 flex items-center justify-between gap-[1.38rem]">
-                <div className="flex items-center justify-between gap-56">
-                    <Heading type="h1" className="text-xl">
+            <nav className="px-5 flex items-center justify-between gap-[1.38rem] w-full">
+                <div className="flex items-center justify-between min-w-[57%]">
+                    <Heading
+                        type="h1"
+                        variant="extraLarge"
+                        className="font-semibold"
+                    >
                         Dashboard
                     </Heading>
 
-                    <div className="rounded-[1.5rem] min-h-[3rem] min-w-[20.8125rem] pl-4 border flex items-center bg-white gap-2 overflow-hidden">
+                    <div className="hidden rounded-[1.5rem] min-h-[3rem] min-w-[21.8125rem] pl-4 border lg:flex items-center bg-white gap-2 overflow-hidden">
                         <CiSearch className="h-[1.125rem] w-[1.125rem]" />
                         <input
                             type="text"
@@ -25,7 +29,7 @@ export const Header = () => {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-5">
+                <div className="hidden lg:flex items-center gap-5">
                     <div className="flex items-center gap-[0.62rem]">
                         <Image
                             src={calendar.src}
@@ -36,7 +40,8 @@ export const Header = () => {
 
                         <Heading
                             type="h2"
-                            className="text-[0.875rem] font-medium leading-[1.375rem]"
+                            variant="normal"
+                            className="font-medium"
                         >
                             November 23, 2023
                         </Heading>
@@ -59,7 +64,8 @@ export const Header = () => {
                             <div>
                                 <Heading
                                     type="h4"
-                                    className="capitalize text-right text-[#26282C] text-base font-normal"
+                                    variant="medium"
+                                    className="capitalize text-right text-[#26282C] font-normal"
                                 >
                                     Justin Bergson
                                 </Heading>
@@ -73,7 +79,7 @@ export const Header = () => {
                                 </Text>
                             </div>
 
-                            <FaChevronDown />
+                            <GoChevronDown className="w-[1.25rem] h-[1.25rem]" />
                         </div>
                     </div>
                 </div>

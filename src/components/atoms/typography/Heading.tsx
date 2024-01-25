@@ -4,9 +4,20 @@ import {
     HEADING_VARIANTS,
 } from "@/utils/constants";
 
-const Heading = ({ children, type = "h1", className = "" }: THeadingProps) => {
+const Heading = ({
+    children,
+    type = "h1",
+    className = "",
+    variant,
+}: THeadingProps) => {
     const Type = type ? HEADING_VARIANTS[type] : "h1";
-    return <Type className={`${className} font-semibold`}>{children}</Type>;
+    return (
+        <Type
+            className={`${className} ${HEADING_STYLE[variant]} font-semibold`}
+        >
+            {children}
+        </Type>
+    );
 };
 
 export default Heading;
