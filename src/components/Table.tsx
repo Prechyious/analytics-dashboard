@@ -65,15 +65,15 @@ const Table = () => {
                     </div>
                     <h4 className="w-2/3 text-[#737373]">{orderDate}</h4>
                     <h4 className="w-1/2 text-[#0D062D]"> ${amount}</h4>
-                    <h4
-                        className={`w-[45%] capitalize ${
+                    <strong
+                        className={`w-[45%] capitalize font-normal ${
                             status === "refund"
                                 ? "text-alerts-error"
                                 : "text-alerts-success"
                         }`}
                     >
                         {status}
-                    </h4>
+                    </strong>
                     <h4 className="w-[45%] flex items-center gap-[0.38rem] text-[#0D062D] text-[0.875rem] leading-[1.275rem]">
                         <span>
                             <Image

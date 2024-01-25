@@ -4,6 +4,7 @@ import BarChartContainer from "./BarChart";
 import { GoChevronDown } from "react-icons/go";
 import Card from "./Card";
 import Table from "./Table";
+import TopPlatforms from "./TopPlatforms";
 
 const Dashboard = () => {
     return (
@@ -11,7 +12,7 @@ const Dashboard = () => {
             <Header />
 
             <section className="w-full space-y-5 px-5 my-5">
-                <article className="flex flex-col md:flex-row w-full gap-5">
+                <article className="flex flex-col flex-wrap lg:flex-row w-full gap-5">
                     {/* Sales Trend Card */}
                     <div className="min-h-[23.375rem] w-full xl:w-[57%] bg-white py-4 px-5 border border-[#EDF2F7] rounded-[0.987rem]">
                         <header className="h-[2.3125rem] w-full flex items-center justify-between mb-4">
@@ -71,8 +72,8 @@ const Dashboard = () => {
                         />
                     </div>
                 </article>
-                <article className="flex flex-col lg:flex-row w-full gap-5">
-                    <div className="min-h-[26.375rem] w-full lg:w-[57%] bg-white border border-[#EDF2F7] rounded-[0.987rem]">
+                <article className="flex flex-col xl:flex-row w-full gap-5 lg:h-[26.375rem]">
+                    <section className="w-full xl:w-[57%] bg-white border border-[#EDF2F7] rounded-[0.987rem]">
                         <header className="mt-[1.12rem] px-5 flex w-full items-center justify-between mb-5">
                             <Heading type="h3" variant="large">
                                 Last Orders
@@ -83,8 +84,23 @@ const Dashboard = () => {
                         </header>
 
                         <Table />
-                    </div>
-                    <div className="bg-white w-full lg:flex-1 h-auto border border-[#EDF2F7] rounded-[0.987rem]"></div>
+                    </section>
+                    <section className="bg-white w-full lg:flex-1 h-auto border border-[#EDF2F7] rounded-[0.987rem] px-5 overflow-y-scroll">
+                        <header className="flex w-full items-center justify-between mb-5 sticky top-0 py-4 h-[2.625rem] backdrop-blur-sm">
+                            <Heading
+                                type="h3"
+                                variant="large"
+                                className="h-full"
+                            >
+                                Top Platforms
+                            </Heading>
+                            <button className="text-alerts-success text-[1.125rem] lea">
+                                See All
+                            </button>
+                        </header>
+
+                        <TopPlatforms />
+                    </section>
                 </article>
             </section>
         </div>

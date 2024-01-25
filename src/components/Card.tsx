@@ -65,7 +65,7 @@ const Card = ({
                 <Text
                     type="small"
                     variant="medium"
-                    className={`px-2 rounded-[62.5rem] py-1 flex items-center justify-center gap-0.5 ${
+                    className={`px-1.5 rounded-[62.5rem] py-1 flex items-center justify-center gap-0.5 ${
                         uptrend
                             ? "text-alerts-success bg-[#34CAA51F]"
                             : "text-alerts-error bg-[#ED544E1F]"

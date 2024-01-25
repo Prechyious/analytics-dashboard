@@ -10,7 +10,7 @@ const config: Config = {
         extend: {
             colors: {
                 alerts: {
-                    error: "#FF1F7D",
+                    error: "#ED544E",
                     success: "#00AC56",
                     warning: "#F5BF3D",
                 },
