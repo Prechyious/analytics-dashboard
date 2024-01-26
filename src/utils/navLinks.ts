@@ -53,7 +53,7 @@ export const otherLinks = [
         alt: "settings",
     },
     {
-        id: 2,
+        id: 3,
         src: logout.src,
         alt: "logout",
     },

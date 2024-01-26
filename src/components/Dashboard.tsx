@@ -9,13 +9,13 @@ import BarChart from "./BarChart";
 
 const Dashboard = () => {
     return (
-        <div className="bg-grayscale-50 dark:bg-zinc-800 min-w-full">
+        <div className="bg-grayscale-50 dark:bg-zinc-900 min-w-full">
             <Header />
 
             <section className="w-full space-y-5 px-5 my-5">
                 <article className="flex flex-col flex-wrap lg:flex-row w-full gap-5">
                     {/* Sales Trend Card */}
-                    <div className="min-h-[23.375rem] w-full xl:w-[57%] bg-white dark:bg-zinc-700 py-4 px-5 border border-[#EDF2F7] dark:border-gray-600 rounded-[0.987rem]">
+                    <div className="min-h-[23.375rem] w-full xl:w-[57%] bg-white dark:bg-zinc-800 py-4 px-5 border border-[#EDF2F7] dark:border-gray-600 rounded-[0.987rem]">
                         <header className="h-[2.3125rem] w-full flex items-center justify-between mb-4">
                             <Heading
                                 type="h3"
@@ -33,7 +33,7 @@ const Dashboard = () => {
                                 >
                                     Sort by:
                                 </Heading>
-                                <button className="px-3 py-[0.38rem] rounded-[1.25rem] bg-white dark:bg-zinc-700 border border-[#E1DFDF] dark:border-gray-500 flex items-center justify-between gap-[0.62rem]">
+                                <button className="px-3 py-[0.38rem] rounded-[1.25rem] bg-white dark:bg-zinc-800 border border-[#E1DFDF] dark:border-gray-500 flex items-center justify-between gap-[0.62rem] hover:bg-grayscale-100 dark:hover:bg-zinc-700 duration-500">
                                     Weekly
                                     <GoChevronDown className="w-[1.25rem] h-[1.25rem]" />
                                 </button>
@@ -78,7 +78,7 @@ const Dashboard = () => {
                     </div>
                 </article>
                 <article className="flex flex-col xl:flex-row w-full gap-5 lg:h-[26.375rem]">
-                    <section className="w-full xl:w-[57%] bg-white dark:bg-zinc-700 border border-[#EDF2F7] dark:border-gray-600 rounded-[0.987rem]">
+                    <section className="w-full xl:w-[57%] bg-white dark:bg-zinc-800 border border-[#EDF2F7] dark:border-gray-600 rounded-[0.987rem]">
                         <header className="mt-[1.12rem] px-5 flex w-full items-center justify-between mb-5">
                             <Heading type="h3" variant="large">
                                 Last Orders
@@ -90,8 +90,8 @@ const Dashboard = () => {
 
                         <Table />
                     </section>
-                    <section className="bg-white dark:bg-zinc-700 w-full lg:flex-1 h-auto border border-[#EDF2F7] dark:border-gray-600 rounded-[0.987rem] px-5 overflow-y-scroll no-scrollbar">
-                        <header className="flex w-full items-center justify-between mb-5 sticky top-0 py-4 h-[2.625rem] backdrop-blur-sm">
+                    <section className="bg-white dark:bg-zinc-800 w-full lg:flex-1 h-auto border border-[#EDF2F7] dark:border-gray-600 rounded-[0.987rem]  overflow-y-scroll no-scrollbar">
+                        <header className="bg-white dark:bg-zinc-800 flex w-full items-center justify-between mb-5 sticky top-0 py-4 h-[2.625rem] z-20  px-5">
                             <Heading
                                 type="h3"
                                 variant="large"

@@ -23,7 +23,7 @@ const orders = [
         orderDate: "Nov 14, 2023",
         amount: "87,000",
         status: "paid",
-        imgSrc: "/images/jaydon.png",
+        imgSrc: "/images/corey.png",
     },
     {
         id: 4,
@@ -45,8 +45,8 @@ const orders = [
 
 const Table = () => {
     return (
-        <section className="w-full px-5">
-            <header className="h-[1.5rem] flex items-center w-full justify-between text-[#9CA4AB] dark:text-grayscale-300 text-[1rem] font-medium leading-[1.5rem] mb-5">
+        <section className="w-full px-5 pb-5">
+            <header className="hidden h-[1.5rem] md:flex items-center w-full justify-between text-[#9CA4AB] dark:text-grayscale-300 text-[1rem] font-medium leading-[1.5rem] mb-5">
                 <h3 className="w-full">Name</h3>
                 <h3 className="w-2/3">Date</h3>
                 <h3 className="w-1/2">Amount</h3>
@@ -57,18 +57,27 @@ const Table = () => {
             {orders.map(({ id, name, orderDate, amount, status, imgSrc }) => (
                 <div
                     key={id}
-                    className="border-t dark:border-t-gray-600 py-[0.875rem] flex items-center w-full justify-between text-[1rem] font-normal leading-[1.5rem] hover:bg-grayscale-100 dark:hover:bg-zinc-600 duration-500 cursor-pointer"
+                    className="border-t dark:border-t-gray-600 py-[0.875rem] flex gap-1 md:gap-0 flex-col md:flex-row md:items-center w-full justify-between text-[1rem] font-normal leading-[1.5rem] hover:bg-grayscale-100 dark:hover:bg-zinc-700 duration-500 cursor-pointer"
                 >
                     <div className="w-full flex items-center gap-[0.62rem]">
+                        <h4 className="md:hidden text-[#9CA4AB] dark:text-grayscale-200">
+                            Name:
+                        </h4>
                         <Image src={imgSrc} alt={name} height={32} width={32} />
-                        <h4 className="capitalize font-medium dark:text-grayscale-200">
+                        <h4 className="capitalize font-medium text-[#9CA4AB] dark:text-grayscale-200">
                             {name}
                         </h4>
                     </div>
                     <h4 className="w-2/3 text-[#737373] dark:text-grayscale-300 text-[0.875rem]">
+                        <span className="md:hidden text-[#9CA4AB] dark:text-grayscale-200 mr-[0.62rem]">
+                            Date:
+                        </span>
                         {orderDate}
                     </h4>
                     <h4 className="w-1/2 text-[#0D062D] dark:text-gray-200">
+                        <span className="md:hidden text-[#9CA4AB] dark:text-grayscale-200 mr-[0.62rem]">
+                            Amount:
+                        </span>
                         ${amount}
                     </h4>
                     <strong
@@ -78,9 +87,15 @@ const Table = () => {
                                 : "text-alerts-success"
                         }`}
                     >
+                        <span className="md:hidden text-[#9CA4AB] dark:text-grayscale-200 text- mr-[0.62rem]">
+                            Status:
+                        </span>
                         {status}
                     </strong>
                     <h4 className="w-[45%] flex items-center gap-[0.38rem] text-[#0D062D] dark:text-grayscale-100/70 text-[0.875rem] leading-[1.275rem]">
+                        <span className="md:hidden text-[#9CA4AB] dark:text-grayscale-200 mr-[0.62rem]">
+                            Invoice:
+                        </span>
                         <span className="text-white">
                             <Image
                                 className="dark:invert"

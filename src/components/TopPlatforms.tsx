@@ -38,7 +38,7 @@ const platforms = [
 
 const TopPlatforms = () => {
     return (
-        <div className="flex flex-col gap-5 w-full">
+        <div className="flex flex-col gap-5 w-full pb-5 px-5">
             {platforms.map(({ id, name, amount, percent, color, progress }) => (
                 <div key={id} className="space-y-4 cursor-pointer">
                     <Heading type="h4" variant="large" className="capitalize">

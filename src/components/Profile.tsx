@@ -1,3 +1,4 @@
+import { formattedDate } from "@/utils/date";
 import Heading from "./atoms/typography/Heading";
 import Text from "./atoms/typography/Text";
 
@@ -8,10 +9,11 @@ type TProfileProps = {
 
 const Profile = ({ openProfile, closeProfile }: TProfileProps) => {
     return (
-        <div
-            className={`absolute top-[4.25rem] px-2 py-3 rounded-[1.25rem] bg-sidebar dark:bg-zinc-600 dark:border dark:border-gray-500 transition-all duration-500 ${
+        <button
+            className={`absolute lg:hidden top-[4.25rem] px-5 py-3 rounded-[1.25rem] bg-sidebar dark:bg-zinc-800 dark:border dark:border-gray-500 ${
                 openProfile ? "right-5" : "-right-full"
-            }`}
+            } transition-all duration-500`}
+            onClick={closeProfile}
         >
             <div>
                 <Heading
@@ -30,7 +32,12 @@ const Profile = ({ openProfile, closeProfile }: TProfileProps) => {
                     Justin@gmail.com
                 </Text>
             </div>
-        </div>
+            <div className="mt-2 text-right">
+                <small className="font-medium text-[0.75rem] text-right">
+                    {formattedDate("short")}
+                </small>
+            </div>
+        </button>
     );
 };
 

@@ -24,7 +24,7 @@ const Card = ({
 }: TCardProps) => {
     return (
         <article
-            className={`${className} p-4 w-full h-full rounded-[0.875rem] border border-[#EDF2F7] dark:border-gray-600 flex flex-col items-start gap-[0.62rem] bg-white dark:bg-zinc-700`}
+            className={`${className} p-4 w-full h-full rounded-[0.875rem] border border-[#EDF2F7] dark:border-gray-600 flex flex-col items-start gap-[0.62rem] bg-white dark:bg-zinc-800 hover:bg-grayscale-100 dark:hover:bg-zinc-700 duration-500 cursor-pointer`}
         >
             <header className="flex w-full justify-between items-center">
                 <div className="h-10 w-10 rounded-full border border-[#E6E6E6] dark:border-gray-500 flex items-center justify-center">

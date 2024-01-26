@@ -24,7 +24,7 @@ const Bar = ({
             onClick={onBarClick}
         >
             <section
-                className={`absolute -top-10 z-[1] -left-[105%] lg:-left-[84%] ${
+                className={`absolute -top-10 z-[1] lg:-left-[84%] ${
                     isActive
                         ? "opacity-100"
                         : "opacity-0 group-hover:opacity-100"

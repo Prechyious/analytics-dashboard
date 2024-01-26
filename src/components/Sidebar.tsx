@@ -16,22 +16,18 @@ const SideBar = () => {
 
     const toggleSideBar = () => setOpenSideBar(!openSideBar);
 
-    const handleActive = (index: number) => {
-        setIsActive(index);
-    };
-
     return (
         <>
             <aside
-                className={`lg:min-w-[5rem] h-[100svh] lg:h-[54.75rem] bg-sidebar dark:bg-zinc-700 flex flex-col items-center border-r border-[#EBECF2] dark:border-gray-600 w-1/6 fixed lg:relative top-0 z-20 py-5 transition-all duration-500 ${
+                className={`lg:min-w-[5rem] min-h-[100svh] lg:h-[54.75rem] bg-sidebar dark:bg-zinc-800 flex flex-col items-center border-r border-[#EBECF2] dark:border-gray-600 w-[5rem] fixed lg:relative top-0 z-10 py-5 transition-all duration-500 ${
                     openSideBar ? "left-0 lg:left-0" : "-left-full lg:left-0"
                 }`}
             >
                 <Link href="#" className="mb-5">
                     <Image src={logo.src} alt="logo" height={40} width={40} />
                 </Link>
-                <nav className="flex flex-col h-full justify-between items-center">
-                    <div className="lg:space-y-4 space-y-2">
+                <nav className="flex flex-col h-full justify-between gap-4 items-center">
+                    <div className="md:space-y-4 space-y-1">
                         {links.map((link, i) => (
                             <div
                                 key={link.id}
@@ -72,7 +68,7 @@ const SideBar = () => {
                         <ThemeToggle />
                     </div>
 
-                    <div className="lg:space-y-4 space-y-2">
+                    <div className="md:space-y-4 space-y-1 mt-4">
                         {otherLinks.map((link) => (
                             <button
                                 key={link.id}
@@ -93,8 +89,8 @@ const SideBar = () => {
                 </nav>
             </aside>
             <button
-                className={`absolute h-6 w-6 flex items-center justify-center rounded-full bg-sidebar dark:bg-zinc-400 dark:border dark:border-gray-500 top-[5.4rem]  ${
-                    openSideBar ? "left-[16.5%]" : "left-0"
+                className={`fixed lg:hidden h-6 w-6 flex items-center justify-center rounded-full bg-sidebar dark:bg-zinc-800 dark:border dark:border-gray-500 top-[5.4rem]  ${
+                    openSideBar ? "left-[5rem]" : "left-0"
                 } transition-all duration-500`}
                 onClick={toggleSideBar}
             >

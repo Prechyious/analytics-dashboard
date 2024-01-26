@@ -16,5 +16,5 @@
   }
 
   body {
-    @apply dark:bg-zinc-800 overflow-x-hidden
+    @apply dark:bg-zinc-900 overflow-x-hidden
   }

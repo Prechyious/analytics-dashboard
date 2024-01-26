@@ -11,8 +11,8 @@ const BarChart = () => {
         setActiveMonth(clickedMonth);
     };
     return (
-        <div className="flex w-full h-[15.9375rem] gap-3 lg:gap-6 items-start">
-            <aside className="min-w-[2rem] lg:min-w-[2.5rem] h-full flex flex-col items-start justify-between">
+        <div className="flex w-full h-[15.9375rem] gap-3 lg:gap-6 items-start relative">
+            <aside className="absolute lg:relative min-w-[2rem] lg:min-w-[2.5rem] h-full flex flex-col items-start justify-between">
                 {range.map((item, i) => (
                     <Text
                         type="small"
