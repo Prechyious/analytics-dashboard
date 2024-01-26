@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import Head from "next/head";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
     subsets: ["latin"],
@@ -11,6 +12,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
     title: "Analytic Dashboard",
     description: "A sleek and visually appealing analytics dashboard",
+    icons: {
+        icon: "/favicon.png",
+    },
 };
 
 export default function RootLayout({
@@ -20,6 +24,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
+            <Head>
+                <link rel="icon" href="/favicon.png" sizes="any" />
+            </Head>
             <body className={plusJakartaSans.className}>
                 <Providers>{children}</Providers>
             </body>
