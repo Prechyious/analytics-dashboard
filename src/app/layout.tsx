@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Analytic Dashboard",
     description: "A sleek and visually appealing analytics dashboard",
     icons: {
-        icon: "/favicon.svg",
+        icon: "/favicon.ico",
     },
 };
 
