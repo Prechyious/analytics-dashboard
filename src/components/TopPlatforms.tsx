@@ -45,16 +45,24 @@ const TopPlatforms = () => {
                         {name}
                     </Heading>
                     {/* Progress bar */}
-                    <div className="w-full relative bg-[#F5F5F5] rounded-[2.5rem] h-[0.75rem]">
+                    <div className="w-full relative bg-[#F5F5F5] dark:bg-gray-300 rounded-[2.5rem] h-[0.75rem]">
                         <div
                             className={`absolute left-0 h-full rounded-[2.5rem] z-[1] ${color} ${progress}`}
                         />
                     </div>
                     <div className="flex w-full justify-between items-center text-[#525252]">
-                        <Text type="medium" variant="normal">
+                        <Text
+                            type="medium"
+                            variant="normal"
+                            className="dark:text-grayscale-200"
+                        >
                             ${amount}
                         </Text>
-                        <Text type="medium" variant="normal">
+                        <Text
+                            type="medium"
+                            variant="normal"
+                            className="dark:text-grayscale-200"
+                        >
                             +{percent}%
                         </Text>
                     </div>

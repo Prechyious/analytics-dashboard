@@ -11,14 +11,14 @@ const BarChart = () => {
         setActiveMonth(clickedMonth);
     };
     return (
-        <div className="flex w-full h-[15.9375rem] gap-6 items-start">
-            <aside className="min-w-[2.5rem] h-full flex flex-col items-start justify-between">
+        <div className="flex w-full h-[15.9375rem] gap-3 lg:gap-6 items-start">
+            <aside className="min-w-[2rem] lg:min-w-[2.5rem] h-full flex flex-col items-start justify-between">
                 {range.map((item, i) => (
                     <Text
                         type="small"
                         variant="semibold"
                         key={i}
-                        className="text-[#525252]/50"
+                        className="text-[#525252]/50 dark:text-grayscale-500"
                     >
                         {item}
                     </Text>
@@ -31,7 +31,7 @@ const BarChart = () => {
                         .map((_, i) => (
                             <hr
                                 key={i}
-                                className="border-dashed h-[0.0625rem] w-full"
+                                className="border-dashed dark:border-gray-500 h-[0.0625rem] w-full"
                             />
                         ))}
                 </div>

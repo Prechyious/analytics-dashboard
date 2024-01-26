@@ -4,6 +4,9 @@ import users from "@/assets/icons/users.svg";
 import box from "@/assets/icons/box.svg";
 import discount from "@/assets/icons/discount.svg";
 import info from "@/assets/icons/info.svg";
+import arrowRight from "@/assets/icons/arrow-right.svg";
+import setting from "@/assets/icons/setting.svg";
+import logout from "@/assets/icons/logout.svg";
 
 export const links = [
     {
@@ -35,5 +38,23 @@ export const links = [
         id: 6,
         src: info.src,
         alt: "information",
+    },
+];
+
+export const otherLinks = [
+    {
+        id: 1,
+        src: arrowRight.src,
+        alt: "forward",
+    },
+    {
+        id: 2,
+        src: setting.src,
+        alt: "settings",
+    },
+    {
+        id: 2,
+        src: logout.src,
+        alt: "logout",
     },
 ];

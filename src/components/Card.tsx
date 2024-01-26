@@ -24,10 +24,10 @@ const Card = ({
 }: TCardProps) => {
     return (
         <article
-            className={`${className} p-4 w-full h-full rounded-[0.875rem] border border-[#EDF2F7] flex flex-col items-start gap-[0.62rem] bg-white`}
+            className={`${className} p-4 w-full h-full rounded-[0.875rem] border border-[#EDF2F7] dark:border-gray-600 flex flex-col items-start gap-[0.62rem] bg-white dark:bg-zinc-700`}
         >
             <header className="flex w-full justify-between items-center">
-                <div className="h-10 w-10 rounded-full border border-[#E6E6E6] flex items-center justify-center">
+                <div className="h-10 w-10 rounded-full border border-[#E6E6E6] dark:border-gray-500 flex items-center justify-center">
                     <Image src={icon} alt={heading} height={24} width={24} />
                 </div>
                 <div className="">
@@ -44,11 +44,11 @@ const Card = ({
                 <Heading
                     type="h4"
                     variant="large"
-                    className="font-medium capitalize text-[#898989]"
+                    className="font-medium capitalize text-[#898989] dark:text-gray-300"
                 >
                     {heading}
                 </Heading>
-                <strong className="font-semibold text-[1.5rem] leading-[2rem] text-[#3A3F51]">
+                <strong className="font-semibold text-[1.5rem] leading-[2rem] text-[#3A3F51] dark:text-gray-200">
                     {heading.toLowerCase() === "total income"
                         ? `$${quantity}`
                         : quantity}
@@ -69,7 +69,7 @@ const Card = ({
                     {`${percent}%`}
                 </small>
 
-                <small className="text-[#606060] text-[0.75rem] leading-normal">
+                <small className="text-[#606060] dark:text-grayscale-300 text-[0.75rem] leading-normal">
                     vs. previous month
                 </small>
             </div>
