@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Heading from "./atoms/typography/Heading";
 import { CiSearch } from "react-icons/ci";
@@ -6,7 +8,30 @@ import bell from "@/assets/icons/bell.svg";
 import justin from "@/assets/images/justin.png";
 import Text from "./atoms/typography/Text";
 import { GoChevronDown } from "react-icons/go";
+import { useEffect, useState } from "react";
+import Profile from "./Profile";
 export const Header = () => {
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [openProfile, setOpenProfile] = useState(false);
+
+    const toggleProfile = () => setOpenProfile(!openProfile);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 768); // Adjust the threshold as needed
+        };
+
+        // Initial call to set the initial state
+        handleResize();
+
+        // Attach the event listener
+        window.addEventListener("resize", handleResize);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
     return (
         <header className="py-3 lg:h-[5.5rem] bg-grayscale-50 dark:bg-zinc-700 flex items-center border-b dark:border-gray-600 w-full">
             <nav className="px-5 flex items-center justify-between gap-[1.38rem] w-full">
@@ -44,12 +69,12 @@ export const Header = () => {
                             variant="normal"
                             className="font-medium"
                         >
-                            November 23, 2023
+                            {isSmallScreen ? "Nov" : "November"} 23, 2023
                         </Heading>
                     </div>
 
                     <div className="flex items-center gap-5">
-                        <button className="w-10 h-10 rounded-[1.6875rem] border border-[#DADDDD] dark:border-gray-500 p-[0.6875rem] ">
+                        <button className="w-8 h-8 flex items-center justify-center lg:w-10 lg:h-10 rounded-[1.6875rem] border border-[#DADDDD] dark:border-gray-500 lg:p-[0.6875rem] ">
                             <Image
                                 className="dark:invert"
                                 src={bell.src}
@@ -57,6 +82,12 @@ export const Header = () => {
                                 height={20}
                                 width={20}
                             />
+                        </button>
+                        {/* Mobile Profile Button */}
+                        <button className="lg:hidden" onClick={toggleProfile}>
+                            <div className="relative w-[2.375rem] h-[2.375rem] dark:border dark:border-gray-500 rounded-[1.1875rem]">
+                                <Image src={justin} alt="user" fill />
+                            </div>
                         </button>
 
                         <button className="hidden lg:flex items-center px-2 py-[0.375rem] rounded-[1.75rem] border border-[#DADDDD] dark:border-gray-500 gap-2">
@@ -86,6 +117,12 @@ export const Header = () => {
                     </div>
                 </div>
             </nav>
+            {openProfile && (
+                <Profile
+                    openProfile={openProfile}
+                    closeProfile={() => setOpenProfile(false)}
+                />
+            )}
         </header>
     );
 };
