@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Analytic Dashboard",
     description: "A sleek and visually appealing analytics dashboard",
     icons: {
-        icon: "/favicon.png",
+        icon: "/favicon.svg",
     },
 };
 
@@ -24,9 +24,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <Head>
-                <link rel="icon" href="/favicon.png" sizes="any" />
-            </Head>
             <body className={plusJakartaSans.className}>
                 <Providers>{children}</Providers>
             </body>
